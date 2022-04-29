@@ -1,0 +1,26 @@
+JavaScript Prototype:	
+		The prototype is an object that is associated with every functions and objects by default in JavaScript, where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
+		In JavaScript Prototype,Every function includes prototype object by default.
+	
+	Ex:
+	<!DOCTYPE html>
+<html>
+<body>
+	<h1>Demo: Prototype</h1>
+	
+	<script>    
+	function Student() {
+		this.name = 'John';
+		this.gender = 'M';
+	}
+
+	Student.prototype.age = 15;
+
+	var studObj1 = new Student();
+	alert(studObj1.age); 
+
+	var studObj2 = new Student();
+	alert(studObj2.age); 
+	</script>	
+</body>
+</html>
