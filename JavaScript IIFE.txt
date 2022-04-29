@@ -1,0 +1,45 @@
+JavaSript
+	>IIFE:
+		An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. 
+		It is a design pattern which is also known as a Self-Executing Anonymous Function.
+
+	Ex.1:
+		(() => {
+  // some initiation code
+  let firstVariable;
+  let secondVariable;
+})();
+
+// firstVariable and secondVariable will be discarded after the function is executed.
+
+An async IIFE allows you to use await and for-await even in older browsers and JavaScript runtimes that have no top-level await:
+
+const getFileStream = async (url) => { /* implementation */ };
+
+(async () => {
+  const stream = await getFileStream('https://domain.name/path/file.ext');
+  for await (const chunk of stream) {
+    console.log({ chunk });
+  }
+})();
+
+	Ex.2:
+		
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript IIFE</title>
+</head>
+<body>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let result = calculator.add(10, 20); // add in app.js
+    console.log(result); // 30
+    console.log(add()); // add in the app.js
+  </script>
+</body>
+</html>
+
+Code language: HTML, XML (xml)
+The calculator.add() called the add() function exported by the calculator.js while the second call to the add() function references the add() function in the app.js.
