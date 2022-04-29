@@ -1,0 +1,25 @@
+JavaScript
+	>Module Pattern:
+		It is a commonly used Design Pattern which is used to wrap a set of variables and functions together in a single scope.
+	
+	Ex:
+
+function EmployeeDetails() {
+  var name: "Mayank";
+  var age = 30;
+  var designation = "Developer",
+  var salary = 10000;
+
+
+  
+  return {
+    name: name,
+    age: age,
+    designation: designation
+  }
+}
+
+var newEmployee = EmployeeDetails()
+
+// This will result in "undefined" value
+var userName = newEmployee.salary;
