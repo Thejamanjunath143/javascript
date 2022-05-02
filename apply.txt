@@ -1,0 +1,69 @@
+JavaScript
+	>The Apply method:
+	   The apply() method is used to write methods, which can be used on different objects. 
+	   It is different from the function call() because it takes arguments as an array. 
+
+	Ex:
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe'
+}
+function greet(greeting, message) {
+    return `${greeting} ${this.firstName}. ${message}`;
+}
+let result = greet.apply(person, ['Hello', 'How are you?']);
+
+console.log(result);
+
+
+
+	>The Call method:
+	   The call() method is used to call a function contains this value and an argument provided individually.
+	   Unlike apply() method, it accepts the argument list.
+
+
+	Ex:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function Emp(id,name) {
+  this.id = id;	
+  this.name = name;
+}
+function PermanentEmp(id,name) {
+ Emp.call(this,id,name);
+}
+document.writeln(new PermanentEmp(101,"theja gm").name);
+</script>
+
+</body>
+</html>
+
+
+	>The Bind method:
+	  The bind() method is used to create a new function.When a function is called, it has its own this keyword set to the provided value, with a given sequence of arguments.
+
+	Ex:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var website = {
+  name: "Javatpoint",
+  getName: function() {
+    return this.name;
+  }
+}
+var unboundGetName = website.getName;
+var boundGetName = unboundGetName.bind(website);
+document.writeln(boundGetName());
+</script>
+
+</body>
+</html>
